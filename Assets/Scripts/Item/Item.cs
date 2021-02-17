@@ -13,12 +13,18 @@ namespace Rebelbyte.Items
     public class Item : MonoBehaviour
     {
         private readonly int SECONDS_TO_RESPAWN = 10;
+        private readonly int ANIMATION_SPEED = 20;
 
         private CancellationTokenSource cancelRespawn;
 
         void Start()
         {
             cancelRespawn = new CancellationTokenSource();
+        }
+
+        void Update()
+        {
+            transform.Rotate(Vector3.up * ANIMATION_SPEED * Time.deltaTime);
         }
 
         public void TakeItem()
