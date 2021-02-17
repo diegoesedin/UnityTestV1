@@ -12,7 +12,7 @@ namespace Rebelbyte.Items
     /// </summary>
     public class Item : MonoBehaviour
     {
-        private readonly int SECONDS_TO_RESPAWN = 5;
+        private readonly int SECONDS_TO_RESPAWN = 10;
 
         private CancellationTokenSource cancelRespawn;
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Rebelbyte.Character
+namespace Rebelbyte.UI
 {
     /// <summary>
     /// UI Class for Indicator over GameObjects

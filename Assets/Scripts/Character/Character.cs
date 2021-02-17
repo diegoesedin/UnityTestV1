@@ -13,16 +13,24 @@ namespace Rebelbyte.Character
     /// </summary>
     public class Character : MonoBehaviour
     {
+        #region Private Properties
+
         private NavMeshAgent navAgent;
         private Animator animator;
+        private Transform objective;
 
-        public Transform objective;
+        #endregion
+
+
+        #region Unity Methods
 
         void Start()
         {
             navAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
             navAgent.SetDestination(objective.position);
+
+            navAgent.speed = GameManager.Instance.CHARACTER_SPEED;
         }
 
         void OnEnable()
@@ -37,6 +45,24 @@ namespace Rebelbyte.Character
 
             SearchItem();
         }
+
+        void OnTriggerEnter(Collider collider)
+        {
+            if (collider.gameObject.tag == "Item")
+            {
+                collider.gameObject.GetComponent<Item>().TakeItem();
+                navAgent.SetDestination(objective.position);
+            }
+
+            if (collider.gameObject.tag == "Final")
+            {
+                GameManager.Instance.OnCharacterRemoved?.Invoke(this);
+            }
+        }
+
+        #endregion
+
+        #region Character Behaviours
 
         /// <summary>
         /// Check for items in a radius, if character founds one, character will go for it
@@ -54,23 +80,11 @@ namespace Rebelbyte.Character
             }
         }
 
-        void OnTriggerEnter(Collider collider)
-        {
-            if (collider.gameObject.tag == "Item")
-            {
-                collider.gameObject.GetComponent<Item>().TakeItem();
-                navAgent.SetDestination(objective.position);
-            }
-
-            if (collider.gameObject.tag == "Final")
-            {
-                GameManager.Instance.OnCharacterRemoved?.Invoke(this);
-            }
-        }
-
         public void InitDestination(Transform destination)
         {
             objective = destination;
         }
+
+        #endregion
     }
 }

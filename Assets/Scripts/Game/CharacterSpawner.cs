@@ -51,7 +51,9 @@ namespace Rebelbyte.Game
                 spawnedCharacter.SetActive(true);
                 spawnedCharacter.GetComponent<Character.Character>().InitDestination(destination);
 
-                await Task.Delay((int)(1 * 1000), cancel);
+                GameManager.Instance.OnCharacterSpawned?.Invoke();
+
+                await Task.Delay((int)(GameManager.Instance.SPAWN_RATE * 1000), cancel);
             }
         }
 

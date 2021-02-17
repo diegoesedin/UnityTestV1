@@ -13,9 +13,22 @@ namespace Rebelbyte.Game
     {
         public static GameManager Instance;
 
+        #region GLOBAL CONFIGURATION
+
+        public float SPAWN_RATE { get; set; } = 1 / 0.1f;
+        public int CHARACTER_SPEED { get; set; } = 4;
+
+        #endregion
+
+        #region GAME EVENTS
+
         public Action OnCharacterSpawned;
         public Action<Character.Character> OnCharacterRemoved;
         public Action OnItemTaken;
+
+        #endregion
+
+
         void Awake()
         {
             if (Instance == null)
