@@ -5,9 +5,9 @@ using UnityEngine;
 namespace Rebelbyte.Character
 {
     /// <summary>
-    /// UI Class for Indicator on Character's head
+    /// UI Class for Indicator over GameObjects
     /// </summary>
-    public class CharacterIndicator : MonoBehaviour
+    public class IndicatorUI : MonoBehaviour
     {
         void LateUpdate()
         {
