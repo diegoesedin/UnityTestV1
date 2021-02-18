@@ -15,6 +15,8 @@ namespace Rebelbyte.Game
         [SerializeField] private GameObject[] characterPrefabs;
         [Header("World point where characters will go")]
         [SerializeField] private Transform destination;
+        [Header("Transform for content characters")]
+        [SerializeField] private Transform charactersParent;
 
         private CancellationTokenSource cancelSpawn;
         private CharacterPooling spawnPool;
@@ -48,6 +50,7 @@ namespace Rebelbyte.Game
 
                 GameObject spawnedCharacter = spawnPool.GetCharacter();
                 spawnedCharacter.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                spawnedCharacter.transform.SetParent(charactersParent);
                 spawnedCharacter.SetActive(true);
                 spawnedCharacter.GetComponent<Character.Character>().InitDestination(destination);
 
