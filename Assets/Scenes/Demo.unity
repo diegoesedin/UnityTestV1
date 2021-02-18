@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 5000
+  m_Intensity: 6000
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -1218,7 +1218,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5000
+  m_Intensity: 6000
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1274,13 +1274,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682925203}
-  m_LocalRotation: {x: 0.94335115, y: -0.18707572, z: -0.17885911, w: 0.20760714}
-  m_LocalPosition: {x: 6.2, y: 7.2, z: 83.6}
+  m_LocalRotation: {x: 0.94259673, y: -0.21983384, z: -0.0017850607, w: 0.25135902}
+  m_LocalPosition: {x: 23.86, y: 11.03, z: 101.37}
   m_LocalScale: {x: 1, y: 1, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 18.952, y: -153.965, z: -153.147}
+  m_LocalEulerAnglesHint: {x: 28.234, y: -172.573, z: -151.874}
 --- !u!1001 &689210419
 PrefabInstance:
   m_ObjectHideFlags: 0
