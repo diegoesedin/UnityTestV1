@@ -39,6 +39,7 @@ namespace Rebelbyte.Character
             if (navAgent != null)
             {
                 navAgent.enabled = true;
+                navAgent.speed = GameManager.Instance.CHARACTER_SPEED;
                 if (objective != null)
                     navAgent.SetDestination(objective.position);
             }

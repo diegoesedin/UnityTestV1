@@ -49,7 +49,7 @@ namespace Rebelbyte.UI
 
         private void OnSpeedChanged(float value)
         {
-            GameManager.Instance.CHARACTER_SPEED = (int)value;
+            GameManager.Instance.CHARACTER_SPEED = value;
         }
 
         private void OnNewCharacter()

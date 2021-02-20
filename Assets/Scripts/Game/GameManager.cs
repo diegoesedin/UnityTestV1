@@ -16,7 +16,7 @@ namespace Rebelbyte.Game
         #region GLOBAL CONFIGURATION
 
         public float SPAWN_RATE { get; set; } = 1 / 0.1f;
-        public int CHARACTER_SPEED { get; set; } = 4;
+        public float CHARACTER_SPEED { get; set; } = 3;
 
         #endregion
 
