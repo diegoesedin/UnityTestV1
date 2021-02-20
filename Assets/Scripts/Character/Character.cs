@@ -27,7 +27,8 @@ namespace Rebelbyte.Character
         void Start()
         {
             navAgent = GetComponent<NavMeshAgent>();
-            animator = GetComponent<Animator>();
+            navAgent.enabled = true;
+            animator = GetComponentInChildren<Animator>();
             navAgent.SetDestination(objective.position);
 
             navAgent.speed = GameManager.Instance.CHARACTER_SPEED;
@@ -35,14 +36,26 @@ namespace Rebelbyte.Character
 
         void OnEnable()
         {
-            if (objective != null)
-                navAgent?.SetDestination(objective.position);
+            if (navAgent != null)
+            {
+                navAgent.enabled = true;
+                if (objective != null)
+                    navAgent.SetDestination(objective.position);
+            }
+        }
+
+        void OnDisable()
+        {
+            navAgent.enabled = false;
         }
 
         void Update()
         {
             animator.SetFloat("Blend", navAgent.velocity.magnitude);
+        }
 
+        void LateUpdate()
+        {
             SearchItem();
         }
 
